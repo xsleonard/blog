@@ -1,0 +1,18 @@
+<!-- appears only in smaller screen -->
+
+<div id="nav">
+  {{ if $.Site.Params.portrait }}
+  <a href="{{ $.Site.Params.portrait | absURL }}" class="image-link">
+    <img class="logo animated flipInY" src="{{ $.Site.Params.portrait | absURL }}"/>
+  </a>
+  {{ end }}
+  
+  <ul>
+    {{ range .Site.Menus.main }}
+      <li><a href="{{.URL}}">
+          <span>{{ .Name }}</span>
+      </a></li>
+    {{end}}
+  </ul>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="social">
+  {{ range .Site.Params.social }}
+    <div>
+        <a href="{{ .url }}">{{ .title }}</a>
+    </div>
+  {{ end }}
+</div>
+
+

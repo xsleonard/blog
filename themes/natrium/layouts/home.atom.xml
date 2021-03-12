@@ -1,0 +1,33 @@
+{{ `<?xml version="1.0" encoding="utf-8"?>` | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <generator>Hugo -- gohugo.io</generator>
+  <link href="{{ .Permalink }}" rel="alternate" type="text/html"/>
+  <link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml"/>
+  <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+  <id>{{ .Permalink }}</id>
+  <title type="html">{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} – {{ end }}{{ .Site.Title }}{{ end }}</title>
+  <author>{{ with .Site.Author.name }}
+    <name>{{.}}</name>{{end}}{{with .Site.Author.email }}
+    <email>{{.}}</email>{{end}}
+  </author>
+  {{ range where (where .Site.RegularPages "Section" "post") ".Params.unlisted" "!=" "true" -}}
+  <entry>
+    <title type="html">{{ .Title }}</title>
+    <link href="{{ .Permalink }}" rel="alternate" type="text/html" title="{{ .Title }}"/>
+    <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+    <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+    <id>{{ .Permalink }}</id>
+    <author>{{ with .Site.Author.name }}
+      <name>{{.}}</name>{{end}}{{with .Site.Author.email }}
+      <email>{{.}}</email>{{end}}
+    </author>
+    {{- range .Params.tags }}
+    <category term="{{.}}"/>
+    {{- end }}
+    {{- if ne .Description "" -}}
+    <summary type="html">{{ .Description }}</summary>
+    {{- end }}
+    <content type="html" xml:base="{{ .Permalink }}">{{`<![CDATA[` | safeHTML}}{{ .Content | safeHTML }}]]></content>
+  </entry>
+  {{ end }}
+</feed>

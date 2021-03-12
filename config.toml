@@ -1,0 +1,44 @@
+baseURL = "https://www.xsleonard.com/"
+languageCode = "en-us"
+title = 'Steve Leonard'
+theme = "natrium"
+googleAnalytics = "UA-148611486-1"
+pygmentsCodeFences = true
+pygmentsStyle = "native"
+disableKinds = ["taxonomyTerm", "section"]
+
+[author]
+name = "Steve Leonard"
+
+[permalinks]
+post = "/:slug/"
+page = "/:slug/"
+
+[params]
+description = "Steve Leonard's Blog"
+favicon = "/images/favicon.ico"
+
+[params.logo]
+url = "portrait.jpg"
+width = 50
+height = 50
+alt = "Logo"
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 2
+
+[params.social]
+rss = false
+email = "xsleonard@gmail.com"
+github = "xsleonard"
+keybase = "sleonard"
+twitter = ""
+linkedin = ""
+stackoverflow_url = ""

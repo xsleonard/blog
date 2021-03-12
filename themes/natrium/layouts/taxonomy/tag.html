@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+
+<main class="content" role="main">
+
+  <div class="list">
+    <h2 class="list-title">{{ .Title }}</h2>
+    {{ range where .Site.RegularPages "Section" "post" }}
+
+    {{ partial "list-item.html" . }}
+
+    {{ end }}
+   </div>
+
+</main>
+
+{{ partial "footer.html" . }}

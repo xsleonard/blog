@@ -1,0 +1,9 @@
+[submodule "themes/pristine"]
+	path = themes/pristine
+	url = https://github.com/xsleonard/pristine.git
+[submodule "themes/natrium"]
+	path = themes/natrium
+	url = git@github.com:xsleonard/hugo-natrium-theme.git
+[submodule "public"]
+	path = public
+	url = git@github.com:xsleonard/xsleonard.github.io.git

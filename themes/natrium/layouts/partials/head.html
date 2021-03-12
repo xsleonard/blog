@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ hugo.Generator }}
+
+<link rel="icon" href="{{ .Site.Params.favicon }}">
+
+{{ if .IsHome }}
+<title>{{ .Title }}</title>
+{{ else }}
+<title>{{ .Title }} – {{ .Site.Title }}</title>
+{{ end }}
+
+{{ if .IsHome }}
+<meta property="description" content="{{ .Site.Params.description }}">
+{{ else }}
+  {{ if .Description }}
+  <meta property="description" content="{{ .Description }}">
+  {{ end }}
+{{ end }}
+
+{{ if .Keywords }}
+<meta property="keywords" content ="{{ delimit .Keywords ", " }}">
+{{ end }}
+
+<link href="/index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+{{ template "_internal/schema.html" . }}
+
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" media="all">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/fonts.css">

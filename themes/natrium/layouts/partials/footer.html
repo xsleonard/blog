@@ -1,0 +1,46 @@
+      <footer class="footer">
+        <ul class="footer-links">
+          {{ if .Site.Params.social.email }}
+          <li>
+            <a href="mailto:{{ .Site.Params.social.email }}"><i class="fa fa-email"></i> Email</a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.social.github }}
+          <li>
+            <a href="https://github.com/{{ .Site.Params.social.github }}"><i class="fa fa-github"></i> GitHub</a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.social.twitter }}
+          <li>
+            <a href="https://twitter.com/{{ .Site.Params.social.twitter }}"><i class="fa fa-twitter"></i> Twitter</a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.social.keybase }}
+          <li>
+            <a href="https://keybase.io/{{ .Site.Params.social.keybase }}"><i class="fa fa-keybase"></i> Keybase</a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.social.linkedin }}
+          <li>
+            <a href="https://linkedin.com/in/{{ .Site.Params.social.linkedin }}"><i class="fa fa-linkedin"></i> LinkedIn</a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.social.stackoverflow }}
+          <li>
+            <a href="{{ .Site.Params.social.stackoverflow }}"><i class="fa fa-stackoverflow"></i> Stack Overflow</a>
+          </li>
+          {{ end }}
+          {{ if .Site.Params.social.rss }}
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS Feed</a>
+          </li>
+          {{ end }}
+        </ul>
+      </footer>
+
+    </div>
+
+{{ template "_internal/google_analytics_async.html" . }}
+
+  </body>
+</html>

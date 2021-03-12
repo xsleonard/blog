@@ -1,0 +1,20 @@
+{{ partialCached "header/head.html" . }}
+
+  <div id="main">
+    {{ partial "nav.html" . }}
+    <h1 class="animated flipInX"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <p class="post-info animated fadeIn">Last Modified on {{ .Lastmod.Format "January 2, 2006" }}
+    {{ .Content }}
+
+
+    {{ if isset .Site.Params "social" }}
+        {{ partialCached "social.html" . }}
+    {{ end }}
+  </div>
+
+
+
+
+
+{{ partial "sidemenu.html" . }}
+{{ partialCached "footer/foot.html" . }}
